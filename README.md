@@ -4,14 +4,15 @@
 
 This site generates random data based on a predefined schema. Perfect for testing and development purposes.
 
-<img width="1393" alt="image" src="https://github.com/satyajitnayk/mock-data/assets/32722867/6a204018-4406-464f-b25b-acacb21eb798">
+<img width="1380" alt="image" src="https://github.com/satyajitnayk/mock-data/assets/32722867/ffdc69d1-8179-4d3a-b87a-9fe4616637c3">
 
 ## Features
 
 - Define custom schemas for data generation.
-- supports `string`, `number` & `generic` as of now.
+- Supports `string`, `number` & `generic` as of now.
 - Instant JSON formatted data output.
 - User-friendly interface with real-time data generation.
+- Click on RHS to copy generated content.
 
 ## Schema Definition
 
@@ -46,8 +47,8 @@ Upon generation, data will resemble:
 
 1. Load the website.
 2. Enter the desired schema in the provided form.
-3. Hit the 'Generate' button to produce random data.
-4. The generated data will be displayed on the screen.
+3. The generated data will be displayed on the screen.
+4. Click on RHS to copy generated content.
 
 ## Local Setup
 
