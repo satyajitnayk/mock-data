@@ -1967,7 +1967,7 @@ const generateRandomData = (schema) => {
     throw new Error('Schema must be an array of fields.');
   }
 
-  return schema.map((field) => {
+  return schema.reduce((obj, field) => {
     if (
       typeof field !== 'object' ||
       typeof field.name !== 'string' ||
@@ -1978,14 +1978,13 @@ const generateRandomData = (schema) => {
       );
     }
 
-    let value;
     if (field.type === 'string' || field.type === 'generic') {
-      value = randomWords(); // Generates a random string.
+      obj[field.name] = randomWords(); // Assigns a random string to the object.
     } else if (field.type === 'number') {
-      value = Math.floor(Math.random() * 100); // Generates a random number.
+      obj[field.name] = Math.floor(Math.random() * 100); // Assigns a random number to the object.
     }
-    return { [field.name]: value };
-  });
+    return obj;
+  }, {});
 };
 
 const generateData = () => {
@@ -2016,3 +2015,14 @@ const copyToClipboard = () => {
       console.error('Could not copy text: ', err);
     });
 };
+
+// Add the event listener for the schema input
+document.getElementById('schemaInput').addEventListener('input', (event) => {
+  generateData(event.target.value);
+});
+
+// Add a click event listener to the result element to copy its content
+document.getElementById('result').addEventListener('click', (event) => {
+  const textToCopy = event.target.textContent;
+  copyToClipboard(textToCopy);
+});

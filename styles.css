@@ -47,7 +47,7 @@ textarea {
   margin: 0 0 10px 0; /* Top Right Bottom Left - adjust as necessary, the bottom margin is for spacing between the textarea and any elements below */
   border: 1px solid #ccc;
   border-radius: 4px;
-  height: 77vh; /* Set a fixed height */
+  height: 84vh; /* Set a fixed height */
   resize: vertical; /* Allow vertical resizing only */
 }
 
@@ -66,15 +66,40 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Output pre styling */
 pre {
   background-color: #f7f7f7;
-  border: 1px solid #ccc;
+  border: 1px solid #007bff; /* Blue border color */
   border-radius: 4px;
   padding: 10px;
   overflow: auto; /* Adds a scrollbar if content overflows */
   white-space: pre-wrap; /* Ensures long text wraps and doesn't overflow */
   word-break: break-all; /* Prevents long strings from breaking layout */
-  height: 75vh; /* Set a fixed height */
+  height: 78vh; /* Set a fixed height */
   margin: 0 0 10px 0;
+  cursor: pointer; /* Indicate that the pre is clickable */
 }
+
+/* Style for copy instruction text */
+.copy-instruction {
+  padding: 5px 10px;
+  background-color: #e7f5ff; /* Light blue background */
+  color: #3178c6; /* Blue text color */
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 5px; /* Space before the pre box */
+  font-size: 0.85rem;
+}
+
+#result {
+  cursor: pointer; /* Change the cursor to indicate clickable */
+  color: #007bff; /* Blue text to make it look like a link */
+  /* ...existing styles... */
+}
+
+/* When there's content, we change the color to default */
+#result:not(:empty) {
+  color: #000; /* Default text color when there's content */
+}
+
+
+
