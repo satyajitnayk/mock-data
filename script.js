@@ -2000,6 +2000,7 @@ const generateData = () => {
   } catch (e) {
     const resultNode = document.getElementById('result')
     resultNode.textContent = e.message;
+    resultNode.style = '';
     resultNode.style.color = 'red';
   }
 };
