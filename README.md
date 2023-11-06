@@ -4,7 +4,8 @@
 
 This site generates random data based on a predefined schema. Perfect for testing and development purposes.
 
-<img width="1380" alt="image" src="https://github.com/satyajitnayk/mock-data/assets/32722867/ffdc69d1-8179-4d3a-b87a-9fe4616637c3">
+<img width="1374" alt="image" src="https://github.com/satyajitnayk/mock-data/assets/32722867/a4da14d3-452f-40eb-bd2c-aa40a84be5e6">
+
 
 ## Features
 
