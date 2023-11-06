@@ -1992,15 +1992,16 @@ const generateData = () => {
   try {
     schema = JSON.parse(schema); // Parse the input to a JSON object.
     const data = generateRandomData(schema);
-    document.getElementById('result').textContent = JSON.stringify(
+    const resultNode = document.getElementById('result')
+    resultNode.textContent = JSON.stringify(
       data,
       null,
       2
     );
+    resultNode.style.color = 'black';
   } catch (e) {
     const resultNode = document.getElementById('result')
     resultNode.textContent = e.message;
-    resultNode.style = '';
     resultNode.style.color = 'red';
   }
 };
