@@ -1998,7 +1998,9 @@ const generateData = () => {
       2
     );
   } catch (e) {
-    document.getElementById('result').textContent = e.message;
+    const resultNode = document.getElementById('result')
+    resultNode.textContent = e.message;
+    resultNode.style.color = 'red';
   }
 };
 
