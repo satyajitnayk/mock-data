@@ -1998,8 +1998,7 @@ const generateData = () => {
       2
     );
   } catch (e) {
-    console.log(e.message);
-    document.getElementById('result').textContent = 'Invalid JSON schema';
+    document.getElementById('result').textContent = e.message;
   }
 };
 
