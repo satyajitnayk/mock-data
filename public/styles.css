@@ -1,0 +1,80 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Center the container horizontally */
+  padding: 20px;
+  background-color: #f4f4f4; /* Optional: Background color for the body */
+}
+
+/* Container holding the elements side by side */
+.container {
+  display: flex;
+  flex-direction: row; /* Set the flex items in a row */
+  align-items: flex-start; /* Align items to the start of the flex container */
+  gap: 20px; /* Creates space between flex items */
+  width: 90%; /* Set the width to 90% of the viewport */
+  margin-top: 20px;
+}
+
+/* Styles for each item in the container */
+.item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Allows the item to grow and take up space */
+  /* Optional: If you want items to take more space, you could specify a flex-basis */
+  flex-basis: 45%; /* Each item starts at 45% of the container's width */
+}
+
+/* Additional responsive adjustment */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack the items on smaller screens */
+  }
+}
+
+/* Textarea styling */
+textarea {
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: calc(
+    100% - 17px
+  ); /* Subtract the total horizontal padding or margin */
+  padding: 10px;
+  margin: 0 0 10px 0; /* Top Right Bottom Left - adjust as necessary, the bottom margin is for spacing between the textarea and any elements below */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 77vh; /* Set a fixed height */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Button styling */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Output pre styling */
+pre {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  overflow: auto; /* Adds a scrollbar if content overflows */
+  white-space: pre-wrap; /* Ensures long text wraps and doesn't overflow */
+  word-break: break-all; /* Prevents long strings from breaking layout */
+  height: 75vh; /* Set a fixed height */
+  margin: 0 0 10px 0;
+}
