@@ -14,6 +14,8 @@ This site generates random data based on a predefined schema. Perfect for testin
 - Instant JSON formatted data output.
 - User-friendly interface with real-time data generation.
 - Click on RHS to copy generated content.
+- Able to fix broken `JSON`
+  <img width="1358" alt="image" src="https://github.com/satyajitnayk/mock-data/assets/32722867/52f90d04-28ec-4162-9049-6154f400bcba">
 
 ## Schema Definition
 

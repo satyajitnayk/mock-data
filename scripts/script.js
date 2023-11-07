@@ -1990,7 +1990,8 @@ const generateRandomData = (schema) => {
 const generateData = () => {
   let schema = document.getElementById('schemaInput').value;
   try {
-    schema = JSON.parse(schema); // Parse the input to a JSON object.
+    const { jsonrepair } = JSONRepair;
+    schema = JSON.parse(jsonrepair(schema)); // Parse the input to a JSON object.
     const data = generateRandomData(schema);
     const resultNode = document.getElementById('result')
     resultNode.textContent = JSON.stringify(
