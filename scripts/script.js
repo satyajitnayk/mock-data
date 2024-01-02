@@ -1967,11 +1967,11 @@ const generateRandomData = (schema) => {
     throw new Error('Schema must be an array of fields.');
   }
 
-  return schema.reduce((obj, field) => {
+  const generateField = (field) => {
     if (
       typeof field !== 'object' ||
       typeof field.name !== 'string' ||
-      !['string', 'number', 'generic'].includes(field.type)
+      !['string', 'number', 'generic', 'array'].includes(field.type)
     ) {
       throw new Error(
         'Each field must be an object with a "name" string and a "type" of "string" or "number" or "generic".'
@@ -1979,10 +1979,23 @@ const generateRandomData = (schema) => {
     }
 
     if (field.type === 'string' || field.type === 'generic') {
-      obj[field.name] = randomWords(); // Assigns a random string to the object.
+      return randomWords();
     } else if (field.type === 'number') {
-      obj[field.name] = Math.floor(Math.random() * 100); // Assigns a random number to the object.
+      return Math.floor(Math.random() * 100);
+    } else if (field.type === 'array') {
+      return new Array(3) // Generate an array of 3 elements for example
+        .fill(null)
+        .map(() =>
+          field?.fields?.reduce((obj, nestedField) => {
+            obj[nestedField.name] = generateField(nestedField);
+            return obj;
+          }, {})
+        );
     }
+  };
+
+  return schema.reduce((obj, field) => {
+    obj[field.name] = generateField(field);
     return obj;
   }, {});
 };
@@ -1993,15 +2006,11 @@ const generateData = () => {
     const { jsonrepair } = JSONRepair;
     schema = JSON.parse(jsonrepair(schema)); // Parse the input to a JSON object.
     const data = generateRandomData(schema);
-    const resultNode = document.getElementById('result')
-    resultNode.textContent = JSON.stringify(
-      data,
-      null,
-      2
-    );
+    const resultNode = document.getElementById('result');
+    resultNode.textContent = JSON.stringify(data, null, 2);
     resultNode.style.color = 'black';
   } catch (e) {
-    const resultNode = document.getElementById('result')
+    const resultNode = document.getElementById('result');
     resultNode.textContent = e.message;
     resultNode.style.color = 'red';
   }
